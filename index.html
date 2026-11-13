@@ -3,87 +3,112 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Снабподбор — подбор покупателей для промышленных поставщиков</title>
-<meta name="description" content="Находим предприятия, которым нужна ваша продукция: по истории торгов, планам закупок и прямым ответам заводов.">
+<title>Снабподбор — находим клиентов, которым нужен ваш продукт</title>
+<meta name="description" content="Находим предприятия и заводы, которым нужна ваша продукция или услуга, проверяем интерес и знакомим вас с ними. Новые рынки, новые продукты, импортозамещение.">
 <style>
-  :root { --ink:#1a1f2b; --muted:#5b6475; --line:#e3e6ec; --accent:#1f5eff; --bg:#f7f8fa; }
+  :root { --ink:#1a1f2b; --muted:#5b6475; --line:#e3e6ec; --accent:#1f5eff; --bg:#f7f8fa; --ok:#1a7f37; }
   * { box-sizing:border-box; }
   body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.55; }
-  .wrap { max-width:880px; margin:0 auto; padding:0 20px; }
-  header { border-bottom:1px solid var(--line); padding:18px 0; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+  a { color:var(--accent); }
+  header { border-bottom:1px solid var(--line); padding:16px 0; }
   header .wrap { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
   .logo { font-weight:700; font-size:20px; }
-  header a { color:var(--muted); text-decoration:none; font-size:14px; margin-left:16px; }
-  .hero { background:var(--bg); padding:48px 0 40px; }
-  h1 { font-size:30px; line-height:1.25; margin:0 0 12px; }
-  .lead { color:var(--muted); font-size:17px; max-width:640px; margin:0; }
-  section { padding:36px 0; border-bottom:1px solid var(--line); }
-  h2 { font-size:22px; margin:0 0 16px; }
-  table { width:100%; border-collapse:collapse; font-size:15px; }
-  th, td { text-align:left; padding:12px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
-  th { color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.03em; }
-  td.price { white-space:nowrap; font-weight:700; }
-  .note { margin-top:14px; color:var(--muted); font-size:14px; }
-  ol { padding-left:20px; margin:0; }
-  ol li { margin-bottom:8px; }
-  .req { background:var(--bg); border-radius:8px; padding:16px 18px; font-size:15px; }
-  footer { padding:28px 0 40px; color:var(--muted); font-size:13px; }
-  a { color:var(--accent); }
-  .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; padding:12px 22px; border-radius:8px; margin-top:20px; }
+  .logo span { display:block; font-weight:400; font-size:13px; color:var(--muted); }
+  nav a { color:var(--muted); text-decoration:none; font-size:14px; margin-left:16px; }
+  .hero { background:var(--bg); padding:56px 0 48px; }
+  h1 { font-size:34px; line-height:1.2; margin:0 0 14px; max-width:760px; }
+  .lead { color:var(--muted); font-size:18px; max-width:680px; margin:0; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; padding:13px 24px; border-radius:8px; margin-top:24px; border:0; cursor:pointer; font:inherit; font-weight:600; }
   .btn:hover { opacity:.9; }
-  .sample td { font-size:14px; color:var(--muted); }
-  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .facts { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+  .facts div { background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; font-size:14px; color:var(--muted); }
+  .facts b { display:block; color:var(--ink); font-size:15px; margin-bottom:4px; }
+  section { padding:44px 0; border-bottom:1px solid var(--line); }
+  h2 { font-size:24px; margin:0 0 18px; }
+  .sub { color:var(--muted); margin:-8px 0 20px; max-width:700px; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
   .card { border:1px solid var(--line); border-radius:10px; padding:18px; background:#fff; }
   .card b { display:block; margin-bottom:6px; }
   .card p { margin:0; color:var(--muted); font-size:14px; }
-  .stats { display:flex; gap:28px; flex-wrap:wrap; margin-top:22px; }
-  .stats div { font-size:14px; color:var(--muted); }
-  .stats b { display:block; font-size:22px; color:var(--ink); }
-  form.req-form { display:grid; gap:14px; max-width:560px; }
-  form.req-form label { font-size:14px; font-weight:600; display:grid; gap:6px; }
-  form.req-form input, form.req-form select, form.req-form textarea { font:inherit; font-weight:400; padding:10px 12px; border:1px solid var(--line); border-radius:8px; }
-  form.req-form button { justify-self:start; border:0; cursor:pointer; font:inherit; }
+  .num { display:inline-block; width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff; text-align:center; line-height:28px; font-weight:700; font-size:14px; margin-bottom:10px; }
+  table { width:100%; border-collapse:collapse; font-size:15px; }
+  th, td { text-align:left; padding:12px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.03em; }
+  td.price { white-space:nowrap; font-weight:700; }
+  .sample td { font-size:14px; }
+  .tag { display:inline-block; font-size:12px; padding:2px 8px; border-radius:20px; background:#eaf7ee; color:var(--ok); white-space:nowrap; }
+  .note { margin-top:14px; color:var(--muted); font-size:13px; }
+  form.req { display:grid; gap:14px; max-width:520px; }
+  form.req label { font-size:14px; font-weight:600; display:grid; gap:6px; }
+  form.req input, form.req textarea { font:inherit; font-weight:400; padding:11px 12px; border:1px solid var(--line); border-radius:8px; }
   .ok { display:none; background:#eaf7ee; border:1px solid #b7e2c3; border-radius:8px; padding:12px 14px; font-size:14px; }
-  @media (max-width:700px){ .grid3{grid-template-columns:1fr;} }
-  @media (max-width:600px){ h1{font-size:24px;} th:nth-child(2), td:nth-child(2){display:none;} }
+  .req-box { background:var(--bg); border-radius:8px; padding:16px 18px; font-size:15px; }
+  footer { padding:28px 0 40px; color:var(--muted); font-size:13px; }
+  @media (max-width:760px){ h1{font-size:26px;} .facts,.grid,.grid4{grid-template-columns:1fr;} nav a{margin-left:10px;} .hide-m{display:none;} }
 </style>
 </head>
 <body>
+
 <header>
   <div class="wrap">
-    <div class="logo">Снабподбор</div>
-    <nav><a href="#request">Заявка</a><a href="#prices">Услуги и цены</a><a href="#refund">Возврат</a><a href="#contacts">Контакты</a><a href="/oferta.html">Оферта</a></nav>
+    <div class="logo">Снабподбор<span>находим клиентов для вашего продукта</span></div>
+    <nav><a href="#how">Как работаем</a><a href="#prices">Цены</a><a href="#request">Заявка</a><a href="#contacts">Контакты</a></nav>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <h1>Подбор покупателей для промышленных поставщиков</h1>
-    <p class="lead">Находим предприятия, которым нужна ваша продукция: анализируем историю торгов и планы закупок, при необходимости связываемся с предприятием и уточняем потребность и условия закупки — объёмы, сроки, требования к поставщику.</p>
-    <a class="btn" href="#request">Запросить предложение</a>
-    <div class="stats"><div><b>44-ФЗ, 223-ФЗ и коммерческие площадки</b>история и планы закупок</div><div><b>1–3 дня</b>срок подготовки перечня</div><div><b>Excel</b>готовый файл для отдела продаж</div></div>
+    <h1>Находим тех, кому нужна ваша продукция</h1>
+    <p class="lead">Предприятия и заводы, которые ищут то, что вы производите или поставляете. Особенно когда вы выходите на новый рынок, запускаете новый продукт или ваш товар ещё не пробовали.</p>
+    <a class="btn" href="#request">Оставить заявку</a>
+    <div class="facts">
+      <div><b>Закупки 44-ФЗ, 223-ФЗ и тендерные площадки</b>плюс открытые данные предприятий и собственная модель приоритизации</div>
+      <div><b>Готовый список заинтересованных</b>контакты тех, кому нужна ваша продукция и кто готов к разговору</div>
+      <div><b>Первый контакт берём на себя</b>проверяем интерес и знакомим вас с покупателем</div>
+    </div>
   </div>
 </div>
 
 <section id="who">
   <div class="wrap">
-    <h2>Кому полезно</h2>
-    <div class="grid3">
-      <div class="card"><b>Производителям</b><p>Новые заводы-покупатели в регионах, где вас ещё не знают.</p></div>
-      <div class="card"><b>Дистрибьюторам</b><p>Предприятия, которые уже закупают аналоги и готовы рассмотреть замену.</p></div>
-      <div class="card"><b>Отделам продаж</b><p>Готовый список с потребностью и контактом подразделения — меньше холодных звонков.</p></div>
+    <h2>Кому помогаем</h2>
+    <p class="sub">Тем, кто ищет клиентов и хочет усилить продажи — от одного списка до полной связки «поиск → проверка интереса → знакомство».</p>
+    <div class="grid4">
+      <div class="card"><b>Производителям и дистрибьюторам</b><p>Новые покупатели в регионах и отраслях, где вас ещё не знают.</p></div>
+      <div class="card"><b>Быстрорастущим компаниям</b><p>Поток тёплых контактов, пока отдел продаж только строится.</p></div>
+      <div class="card"><b>Импортозамещению</b><p>Предприятия, которым нужна замена ушедшим брендам.</p></div>
+      <div class="card"><b>Новым продуктам и услугам</b><p>Первые клиенты для того, что рынок ещё не пробовал.</p></div>
     </div>
   </div>
 </section>
 
-<section id="method">
+<section id="how">
   <div class="wrap">
     <h2>Как мы работаем</h2>
-    <ol>
-      <li><b>Аналитика.</b> Изучаем историю и планы закупок по 44-ФЗ и 223-ФЗ, коммерческие закупки на B2B-площадках и открытые данные предприятий в вашей нише и регионах.</li>
-      <li><b>Уточнение.</b> При необходимости связываемся с отделом закупок или службой главного механика и выясняем актуальную потребность, объёмы, сроки и требования к поставщику.</li>
-      <li><b>Результат.</b> Передаём вам перечень предприятий с выявленной потребностью и условиями. Переговоры и сделку вы ведёте напрямую — мы не являемся посредником или агентом.</li>
-    </ol>
+    <div class="grid4">
+      <div class="card"><span class="num">1</span><b>Изучаем продукт</b><p>Разбираемся, что вы предлагаете, кому это нужно и чем вы отличаетесь.</p></div>
+      <div class="card"><span class="num">2</span><b>Ищем и ранжируем</b><p>Закупки по 44-ФЗ и 223-ФЗ, тендерные площадки, открытые данные предприятий. Приоритизируем по вероятности потребности.</p></div>
+      <div class="card"><span class="num">3</span><b>Проверяем интерес</b><p>Связываемся с предприятием, уточняем потребность, объёмы и сроки, проводим первичные переговоры о заинтересованности.</p></div>
+      <div class="card"><span class="num">4</span><b>Знакомим</b><p>Передаём контакт и итоги разговора. Условия и договор вы согласуете с покупателем напрямую.</p></div>
+    </div>
+    <p class="note">Мы оказываем информационно-аналитическую услугу за фиксированную плату и не являемся агентом или посредником в ваших сделках.</p>
+  </div>
+</section>
+
+<section id="sample">
+  <div class="wrap">
+    <h2>Что вы получаете</h2>
+    <p class="sub">Таблицу с предприятиями, которым нужна ваша продукция, и статусом контакта. Два условных примера:</p>
+    <table class="sample">
+      <thead><tr><th>Предприятие</th><th>Потребность</th><th class="hide-m">Источник</th><th>Контакт</th><th>Статус</th></tr></thead>
+      <tbody>
+        <tr><td>АО «Пример-Завод», Свердловская обл.</td><td>Анаэробные герметики для ремонта насосов, ~120 шт./квартал</td><td class="hide-m">Закупка по 223-ФЗ, сентябрь 2026</td><td>Отдел закупок, zakupki@zavod.example</td><td><span class="tag">готовы к разговору</span></td></tr>
+        <tr><td>ООО «Пример-Логистик», Татарстан</td><td>Замена импортной системы учёта склада, запуск в I квартале</td><td class="hide-m">План закупок + сайт предприятия</td><td>ИТ-служба, it@logistic.example</td><td>потребность подтверждена</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Данные вымышленные. В перечнях — только сведения о юридических лицах из открытых источников и ролевые адреса подразделений; персональные данные физических лиц не продаём.</p>
   </div>
 </section>
 
@@ -91,75 +116,43 @@
   <div class="wrap">
     <h2>Услуги и цены</h2>
     <table>
-      <thead><tr><th>Услуга</th><th>Что вы получаете</th><th>Цена</th></tr></thead>
+      <thead><tr><th>Услуга</th><th>Что входит</th><th>Цена</th></tr></thead>
       <tbody>
-        <tr><td>Перечень предприятий, пакет 20 строк</td><td>Предприятие, регион, что закупало и когда, контакт отдела закупок или службы главного механика</td><td class="price">6 000 ₽</td></tr>
-        <tr><td>Перечень предприятий, пакет 50 строк</td><td>То же, 50 строк</td><td class="price">12 500 ₽</td></tr>
-        <tr><td>Горячая строка</td><td>Предприятие ответило «да, интересно» + контакт + срок закупки</td><td class="price">3 000 ₽ за строку</td></tr>
-        <tr><td>Подписка на нишу и регион</td><td>Ежемесячное обновление перечня и новые закупки</td><td class="price">15 000 ₽ / мес</td></tr>
+        <tr><td>Строка перечня</td><td>Предприятие с признаками потребности, источник и контакт подразделения</td><td class="price">от 100 ₽</td></tr>
+        <tr><td>Перечень под ваш продукт</td><td>Поиск, ранжирование и проверка контактов по вашей нише и регионам</td><td class="price">от 5 000 ₽</td></tr>
+        <tr><td>Подтверждённый клиент</td><td>Мы глубоко проработали предприятие: связались, выяснили потребность и получили подтверждение, что оно готово взаимодействовать именно с вами</td><td class="price">от 3 000 ₽</td></tr>
+        <tr><td>Подписка на рынок</td><td>Ежемесячное обновление перечня и новые закупки по нише и регионам</td><td class="price">от 15 000 ₽ / мес</td></tr>
       </tbody>
     </table>
-    <p class="note">В перечнях — только сведения о юридических лицах из открытых источников (ЕИС, сайты предприятий) и ролевые адреса подразделений (закупки, служба главного механика). Персональные данные физических лиц не продаём.</p>
-    <h2 style="margin-top:28px">Пример строки</h2>
-    <table class="sample">
-      <thead><tr><th>Предприятие</th><th>Что закупало</th><th>Когда</th><th>Контакт</th></tr></thead>
-      <tbody><tr><td>АО «Пример-Завод», Свердловская обл.</td><td>Анаэробные герметики, 120 шт.</td><td>Закупка в ЕИС, сентябрь 2026</td><td>отдел закупок, zakupki@primer-zavod.ru</td></tr></tbody>
-    </table>
-    <p class="note">Пример условный, данные вымышленные.</p>
-    <p class="note">Первые 5 строк — бесплатно, чтобы вы оценили качество. Цены указаны без НДС (исполнитель — плательщик налога на профессиональный доход, НДС не облагается).</p>
-  </div>
-</section>
-
-<section id="how">
-  <div class="wrap">
-    <h2>Как заказать и получить</h2>
-    <ol>
-      <li>Оставьте <a href="#request">заявку через форму</a> или напишите на <a href="mailto:zapros@snabpodbor.ru">zapros@snabpodbor.ru</a>: какую продукцию поставляете и в каких регионах.</li>
-      <li>Мы анализируем вашу нишу: смотрим историю и планы закупок, оцениваем число потенциальных покупателей и присылаем образец строк и предложение — состав, цену и срок.</li>
-      <li>Вы подтверждаете предложение.</li>
-      <li>Получаете ссылку на оплату через платёжный сервис Robokassa: картой или через СБП. Чек приходит на e-mail автоматически.</li>
-      <li>Мы готовим перечень: при необходимости связываемся с предприятиями и уточняем потребность и условия. Файл Excel приходит на e-mail в срок из предложения — обычно 1–3 рабочих дня; горячие строки — по мере ответов предприятий.</li>
-    </ol>
-    <p class="note">Компании могут оплатить по счёту — запросите счёт на <a href="mailto:zapros@snabpodbor.ru">zapros@snabpodbor.ru</a>. Закрывающий документ — чек самозанятого; договор и акт — по запросу. Оплачивая услугу, вы принимаете условия <a href="/oferta.html">публичной оферты</a>.</p>
+    <p class="note">Точная стоимость зависит от ниши и объёма — называем её в предложении до оплаты. Оплата картой или через СБП по ссылке Robokassa; компании могут оплатить по счёту. НДС не облагается: исполнитель — самозанятый.</p>
   </div>
 </section>
 
 <section id="request">
   <div class="wrap">
-    <h2>Заявка на подбор</h2>
-    <p class="note" style="margin-top:0">Заполните форму — откроется письмо на zapros@snabpodbor.ru с вашими данными. Ответим с образцом строк и предложением.</p>
-    <form class="req-form" id="reqForm">
-      <label>Продукция<input name="product" required placeholder="Например: анаэробные герметики, подшипники"></label>
-      <label>Регионы<input name="regions" required placeholder="Например: Урал, Поволжье"></label>
-      <label>Услуга
-        <select name="service">
-          <option>Перечень предприятий</option>
-          <option>Горячие строки</option>
-          <option>Подписка на нишу и регион</option>
-          <option>Пока не знаю — нужна консультация</option>
-        </select>
-      </label>
-      <label>Компания<input name="company" placeholder="Название и сайт"></label>
-      <label>E-mail для ответа<input name="email" type="email" required placeholder="sales@company.ru"></label>
-      <label>Комментарий<textarea name="comment" rows="3" placeholder="Объёмы, конкуренты, что уже пробовали"></textarea></label>
-      <button class="btn" type="submit">Отправить заявку</button>
-      <div class="ok" id="reqOk">Письмо сформировано в вашем почтовом клиенте — осталось нажать «Отправить». Если окно не открылось, напишите на zapros@snabpodbor.ru.</div>
+    <h2>Оставьте заявку</h2>
+    <p class="sub">Расскажите, что вы продаёте, — пришлём предложение и пример строк.</p>
+    <form class="req" id="reqForm">
+      <label>Ваш продукт или услуга<input name="product" required placeholder="Например: промышленные герметики"></label>
+      <label>Как с вами связаться<input name="contact" required placeholder="E-mail или Telegram"></label>
+      <label>Комментарий (необязательно)<textarea name="comment" rows="3" placeholder="Регионы, отрасли, что уже пробовали"></textarea></label>
+      <button class="btn" type="submit" style="justify-self:start;margin-top:4px">Отправить заявку</button>
+      <div class="ok" id="reqOk">Откроется письмо на zapros@snabpodbor.ru — осталось нажать «Отправить». Если окно не открылось, напишите нам на этот адрес.</div>
     </form>
   </div>
 </section>
 
 <section id="refund">
   <div class="wrap">
-    <h2>Возврат и замена</h2>
-    <p>Услуга оказывается в электронном виде: файл отправляется на e-mail, физическая доставка не требуется.</p>
-    <p>Если строка не соответствует описанию (предприятие закрыто, контакт недействителен), мы заменим её или вернём деньги за эту строку. Запрос присылайте на <a href="mailto:zapros@snabpodbor.ru">zapros@snabpodbor.ru</a> в течение 14 дней после получения файла. Деньги возвращаются тем же способом, которым была произведена оплата, в течение 10 рабочих дней.</p>
+    <h2>Возврат</h2>
+    <p>Услуга оказывается в электронном виде: результат отправляется на e-mail. Если строка не соответствует описанию (предприятие закрыто, контакт недействителен), заменим её или вернём деньги за неё. Запрос — на <a href="mailto:zapros@snabpodbor.ru">zapros@snabpodbor.ru</a> в течение 14 дней после получения результата; деньги возвращаются тем же способом, что и оплата, в течение 10 рабочих дней. Подробно — в <a href="/oferta.html">публичной оферте</a>.</p>
   </div>
 </section>
 
 <section id="contacts">
   <div class="wrap">
     <h2>Контакты и реквизиты</h2>
-    <div class="req">
+    <div class="req-box">
       E-mail: <a href="mailto:zapros@snabpodbor.ru">zapros@snabpodbor.ru</a><br>
       Исполнитель: самозанятый <!--FIO-->Путилин Георгий Васильевич<!--/FIO--><br>
       ИНН: <!--INN-->270393312184<!--/INN-->
@@ -170,14 +163,13 @@
 <footer>
   <div class="wrap">© 2026 Снабподбор · snabpodbor.ru · <a href="/oferta.html">Публичная оферта</a></div>
 </footer>
+
 <script>
 document.getElementById('reqForm').addEventListener('submit', function(e){
   e.preventDefault();
   var f = e.target, v = function(n){ return (f.elements[n].value || '').trim(); };
-  var body = 'Продукция: ' + v('product') + '\nРегионы: ' + v('regions') + '\nУслуга: ' + v('service') +
-             '\nКомпания: ' + v('company') + '\nE-mail для ответа: ' + v('email') + '\nКомментарий: ' + v('comment');
-  location.href = 'mailto:zapros@snabpodbor.ru?subject=' + encodeURIComponent('Заявка на подбор: ' + v('product')) +
-                  '&body=' + encodeURIComponent(body);
+  var body = 'Продукт / услуга: ' + v('product') + '\nКонтакт: ' + v('contact') + '\nКомментарий: ' + v('comment');
+  location.href = 'mailto:zapros@snabpodbor.ru?subject=' + encodeURIComponent('Заявка: ' + v('product')) + '&body=' + encodeURIComponent(body);
   document.getElementById('reqOk').style.display = 'block';
 });
 </script>
