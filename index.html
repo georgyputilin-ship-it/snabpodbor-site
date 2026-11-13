@@ -29,6 +29,9 @@
   .req { background:var(--bg); border-radius:8px; padding:16px 18px; font-size:15px; }
   footer { padding:28px 0 40px; color:var(--muted); font-size:13px; }
   a { color:var(--accent); }
+  .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; padding:12px 22px; border-radius:8px; margin-top:20px; }
+  .btn:hover { opacity:.9; }
+  .sample td { font-size:14px; color:var(--muted); }
   @media (max-width:600px){ h1{font-size:24px;} th:nth-child(2), td:nth-child(2){display:none;} }
 </style>
 </head>
@@ -44,6 +47,7 @@
   <div class="wrap">
     <h1>Подбор покупателей для промышленных поставщиков</h1>
     <p class="lead">Находим предприятия, которым нужна ваша продукция: по истории торгов, планам закупок и прямым ответам заводов.</p>
+    <a class="btn" href="mailto:zapros@snabpodbor.ru?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F&body=%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F%3A%20%0A%D0%A0%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D1%8B%3A%20%0A%D0%A3%D1%81%D0%BB%D1%83%D0%B3%D0%B0%3A%20">Запросить предложение</a>
   </div>
 </div>
 
@@ -59,6 +63,13 @@
         <tr><td>Подписка на нишу и регион</td><td>Ежемесячное обновление перечня и новые закупки</td><td class="price">15 000 ₽ / мес</td></tr>
       </tbody>
     </table>
+    <p class="note">В перечнях — только сведения о юридических лицах из открытых источников (ЕИС, сайты предприятий) и ролевые адреса подразделений (закупки, служба главного механика). Персональные данные физических лиц не продаём.</p>
+    <h2 style="margin-top:28px">Пример строки</h2>
+    <table class="sample">
+      <thead><tr><th>Предприятие</th><th>Что закупало</th><th>Когда</th><th>Контакт</th></tr></thead>
+      <tbody><tr><td>АО «Пример-Завод», Свердловская обл.</td><td>Анаэробные герметики, 120 шт.</td><td>Закупка в ЕИС, сентябрь 2026</td><td>отдел закупок, zakupki@primer-zavod.ru</td></tr></tbody>
+    </table>
+    <p class="note">Пример условный, данные вымышленные.</p>
     <p class="note">Первые 5 строк — бесплатно, чтобы вы оценили качество. Цены указаны без НДС (исполнитель — плательщик налога на профессиональный доход, НДС не облагается).</p>
   </div>
 </section>
@@ -68,7 +79,7 @@
     <h2>Как заказать и получить</h2>
     <ol>
       <li>Напишите на <a href="mailto:zapros@snabpodbor.ru">zapros@snabpodbor.ru</a>: какую продукцию поставляете и в каких регионах.</li>
-      <li>Получите ссылку на оплату картой или через СБП. Чек приходит на e-mail автоматически.</li>
+      <li>Получите ссылку на оплату через платёжный сервис Robokassa: картой или через СБП. Чек приходит на e-mail автоматически.</li>
       <li>Файл Excel приходит на e-mail в течение 1 рабочего дня после оплаты.</li>
     </ol>
     <p class="note">Компании могут оплатить по счёту — запросите счёт на <a href="mailto:zapros@snabpodbor.ru">zapros@snabpodbor.ru</a>. Оплачивая услугу, вы принимаете условия <a href="/oferta.html">публичной оферты</a>.</p>
