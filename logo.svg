@@ -1,9 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Snabpodbor mark v8 (original): geometric lion profile facing right; navy mane, light face. -->
-  <polygon fill="#1a2b6b" points="38,3 29,7 20,4 18,13 8,14 11,23 3,29 10,35 4,43 13,46 11,56 21,54 25,62 31,55 38,59 41,51 33,46 28,36 28,24 33,15 42,12"/>
-  <polygon fill="#f2f5ff" stroke="#1a2b6b" stroke-width="1.6" stroke-linejoin="round" points="42,12 33,15 28,24 28,36 33,46 41,51 46,47 48,41 56,41 61,36 60,29 54,26 51,17"/>
-  <polygon fill="#1a2b6b" points="44,22 54,21 53,23 45,24"/>
-  <polygon fill="#1f5eff" points="46,25 53,24.5 49.5,28"/>
-  <polygon fill="#1a2b6b" points="57,29 61,30 60,34 56,32"/>
-  <polygon fill="#1a2b6b" points="48,41 56,41 52,44"/>
+  <!-- Snabpodbor mark v9b (original): geometric lion profile rising over a planet horizon with latitude arcs (new markets). -->
+  <defs><clipPath id="f"><rect x="0" y="0" width="64" height="64"/></clipPath></defs>
+  <g clip-path="url(#f)">
+    <path d="M-6 64 Q32 30 70 64 Z" fill="#e6edff"/>
+    <g fill="none" stroke="#9db4ff" stroke-width="1.5">
+      <path d="M-6 64 Q32 30 70 64"/>
+      <path d="M2 64 Q32 40 62 64"/>
+      <path d="M12 64 Q32 50 52 64"/>
+      <path d="M32 47 L32 64"/>
+      <path d="M20 50 Q22 57 23 64"/>
+      <path d="M44 50 Q42 57 41 64"/>
+    </g>
+  </g>
+  <g transform="translate(6,-2) scale(0.82)">
+    <polygon fill="#1a2b6b" points="38,3 29,7 20,4 18,13 8,14 11,23 3,29 10,35 4,43 13,46 11,56 21,54 25,62 31,55 38,59 41,51 33,46 28,36 28,24 33,15 42,12"/>
+    <polygon fill="#f2f5ff" stroke="#1a2b6b" stroke-width="1.6" stroke-linejoin="round" points="42,12 33,15 28,24 28,36 33,46 41,51 46,47 48,41 56,41 61,36 60,29 54,26 51,17"/>
+    <polygon fill="#1a2b6b" points="44,22 54,21 53,23 45,24"/>
+    <polygon fill="#1f5eff" points="46,25 53,24.5 49.5,28"/>
+    <polygon fill="#1a2b6b" points="57,29 61,30 60,34 56,32"/>
+    <polygon fill="#1a2b6b" points="48,41 56,41 52,44"/>
+  </g>
 </svg>
