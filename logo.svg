@@ -1,27 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Original mark: geometric lion head in profile over a globe with grid lines (new markets). -->
-  <g fill="none" stroke="#9db4ff" stroke-width="1.6">
-    <circle cx="34" cy="32" r="29" fill="#eef3ff"/>
-    <ellipse cx="34" cy="32" rx="13" ry="29"/>
-    <line x1="34" y1="3" x2="34" y2="61"/>
-    <path d="M7 22 H61"/>
-    <path d="M5 32 H63"/>
-    <path d="M7 42 H61"/>
-  </g>
-  <g transform="translate(4,4) scale(0.88)">
-    <g fill="#1a2b6b">
-      <polygon points="38,3 29,7 20,4 18,13 8,14 11,23 3,29 10,35 4,43 13,46 11,56 21,54 25,62 31,55 38,59 41,51 33,46 28,36 28,24 33,15 42,12"/>
-    </g>
-    <g fill="#1f5eff">
-      <polygon points="42,12 33,15 28,24 28,36 33,46 41,51 46,47 48,41 56,41 61,36 60,29 54,26 51,17"/>
-    </g>
-    <g fill="#1a2b6b">
-      <polygon points="36,15 40,9 43,16"/>
-      <polygon points="57,30 61,30 60,34"/>
-      <polygon points="48,41 56,41 52,44"/>
-    </g>
-    <g fill="#ffffff">
-      <polygon points="45,24 52,23 49,27"/>
-    </g>
+  <!-- Snabpodbor mark v5 (original): geometric lion profile inside a magnifying lens — "we search". -->
+  <line x1="46" y1="46" x2="60" y2="60" stroke="#1a2b6b" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="28" cy="28" r="25" fill="#1f5eff" stroke="#1a2b6b" stroke-width="4"/>
+  <g transform="translate(6,6) scale(0.66)">
+    <polygon fill="#bcd0ff" points="38,3 29,7 20,4 18,13 8,14 11,23 3,29 10,35 4,43 13,46 11,56 21,54 25,62 31,55 38,59 41,51 33,46 28,36 28,24 33,15 42,12"/>
+    <polygon fill="#ffffff" points="42,12 33,15 28,24 28,36 33,46 41,51 46,47 48,41 56,41 61,36 60,29 54,26 51,17"/>
+    <polygon fill="#1f5eff" points="45,24 53,23 49,28"/>
+    <polygon fill="#1f5eff" points="57,30 61,30 60,34"/>
+    <polygon fill="#1f5eff" points="48,41 56,41 52,44"/>
   </g>
 </svg>
