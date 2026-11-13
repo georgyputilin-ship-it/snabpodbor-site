@@ -1,23 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- Snabpodbor mark v9b (original): geometric lion profile rising over a planet horizon with latitude arcs (new markets). -->
-  <defs><clipPath id="f"><rect x="0" y="0" width="64" height="64"/></clipPath></defs>
-  <g clip-path="url(#f)">
-    <path d="M-6 64 Q32 30 70 64 Z" fill="#e6edff"/>
-    <g fill="none" stroke="#9db4ff" stroke-width="1.5">
-      <path d="M-6 64 Q32 30 70 64"/>
-      <path d="M2 64 Q32 40 62 64"/>
-      <path d="M12 64 Q32 50 52 64"/>
-      <path d="M32 47 L32 64"/>
-      <path d="M20 50 Q22 57 23 64"/>
-      <path d="M44 50 Q42 57 41 64"/>
-    </g>
+  <!-- Snabpodbor mark v11 (original): low-poly lion face, front view, in a globe roundel. -->
+  <defs><clipPath id="c"><circle cx="32" cy="32" r="30"/></clipPath></defs>
+  <circle cx="32" cy="32" r="30" fill="#eef3ff"/>
+  <g clip-path="url(#c)" fill="none" stroke="#9db4ff" stroke-width="1.4">
+    <ellipse cx="32" cy="32" rx="14" ry="30"/>
+    <line x1="32" y1="2" x2="32" y2="62"/>
+    <line x1="2" y1="20" x2="62" y2="20"/>
+    <line x1="2" y1="44" x2="62" y2="44"/>
   </g>
-  <g transform="translate(6,-2) scale(0.82)">
-    <polygon fill="#1a2b6b" points="38,3 29,7 20,4 18,13 8,14 11,23 3,29 10,35 4,43 13,46 11,56 21,54 25,62 31,55 38,59 41,51 33,46 28,36 28,24 33,15 42,12"/>
-    <polygon fill="#f2f5ff" stroke="#1a2b6b" stroke-width="1.6" stroke-linejoin="round" points="42,12 33,15 28,24 28,36 33,46 41,51 46,47 48,41 56,41 61,36 60,29 54,26 51,17"/>
-    <polygon fill="#1a2b6b" points="44,22 54,21 53,23 45,24"/>
-    <polygon fill="#1f5eff" points="46,25 53,24.5 49.5,28"/>
-    <polygon fill="#1a2b6b" points="57,29 61,30 60,34 56,32"/>
-    <polygon fill="#1a2b6b" points="48,41 56,41 52,44"/>
-  </g>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#1a2b6b" stroke-width="2.4"/>
+  <polygon fill="#1a2b6b" points="32.0,7.0 23.3,16.0 10.9,17.2 12.5,29.5 5.7,40.0 16.4,46.5 20.3,58.3 32.0,54.0 43.7,58.3 47.6,46.5 58.3,40.0 51.5,29.5 53.1,17.2 40.7,16.0"/>
+  <polygon fill="#f2f5ff" points="32.0,13.0 25.0,15.0 20.0,21.0 19.0,30.0 21.0,38.0 25.0,45.0 29.0,50.0 32.0,51.0 32.0,51.0 35.0,50.0 39.0,45.0 43.0,38.0 45.0,30.0 44.0,21.0 39.0,15.0 32.0,13.0"/>
+  <!-- brows -->
+  <polygon fill="#1a2b6b" points="21,25 29,27 29,29 22,27.5"/>
+  <polygon fill="#1a2b6b" points="43,25 35,27 35,29 42,27.5"/>
+  <!-- eyes -->
+  <polygon fill="#1f5eff" points="23,29 29,30.5 25,33"/>
+  <polygon fill="#1f5eff" points="41,29 35,30.5 39,33"/>
+  <!-- nose bridge + nose -->
+  <polygon fill="#d9e4ff" points="30,30 34,30 35,38 29,38"/>
+  <polygon fill="#1a2b6b" points="27,38 37,38 32,43"/>
+  <!-- mouth -->
+  <polyline points="32,43 32,46 28,48" fill="none" stroke="#1a2b6b" stroke-width="1.5" stroke-linejoin="round"/>
+  <polyline points="32,46 36,48" fill="none" stroke="#1a2b6b" stroke-width="1.5"/>
 </svg>
