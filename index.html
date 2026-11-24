@@ -49,6 +49,34 @@
   .req-box { background:var(--bg); border-radius:8px; padding:16px 18px; font-size:15px; }
   footer { padding:28px 0 40px; color:var(--muted); font-size:13px; }
   @media (max-width:760px){ h1{font-size:26px;} .facts,.grid,.grid4{grid-template-columns:1fr;} nav a{margin-left:10px;} .hide-m{display:none;} }
+
+  .who-list { display:grid; grid-template-columns:1fr 1fr; gap:10px 40px; margin:0; padding:0; list-style:none; }
+  .who-list li { padding:10px 0 10px 30px; position:relative; border-bottom:1px dashed var(--line); }
+  .who-list li::before { content:"✓"; position:absolute; left:0; top:10px; color:var(--accent); font-weight:700; }
+  .who-list b { display:block; }
+  .who-list span { color:var(--muted); font-size:14px; }
+  .steps { display:flex; gap:0; counter-reset:s; }
+  .steps div { flex:1; padding:0 22px 0 0; position:relative; }
+  .steps div::before { counter-increment:s; content:counter(s); display:block; font-size:44px; font-weight:800; color:#dfe6ff; line-height:1; margin-bottom:6px; }
+  .steps b { display:block; margin-bottom:4px; }
+  .steps p { margin:0; color:var(--muted); font-size:14px; }
+  .dark { background:#141a2a; color:#e9ecf3; border-bottom:0; }
+  .dark h2 { color:#fff; }
+  .dark .sub, .dark .note { color:#9aa3b8; }
+  .cases { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .case { background:#1d2438; border-radius:14px; padding:22px; }
+  .case .lbl { display:inline-block; font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:#8fb0ff; margin-bottom:8px; }
+  .case h3 { margin:0 0 10px; font-size:18px; color:#fff; }
+  .case dl { margin:0; font-size:14px; }
+  .case dt { color:#8fb0ff; font-weight:600; margin-top:10px; }
+  .case dd { margin:2px 0 0; color:#d5d9e3; }
+  .case ul { margin:4px 0 0; padding-left:18px; }
+  .status { display:inline-block; margin-top:14px; font-size:12px; padding:3px 10px; border-radius:20px; background:#2b3550; color:#c9d4ff; }
+  .about { display:grid; grid-template-columns:120px 1fr; gap:24px; align-items:start; }
+  .about .big { font-size:64px; font-weight:800; color:var(--accent); line-height:1; }
+  .about .big small { display:block; font-size:13px; font-weight:400; color:var(--muted); }
+  .about p { margin:0; font-size:17px; }
+  @media (max-width:760px){ .who-list,.cases{grid-template-columns:1fr;} .steps{flex-direction:column; gap:18px;} .about{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -56,7 +84,7 @@
 <header>
   <div class="wrap">
     <div class="brand"><img src="logo.png" alt="Снабподбор" width="72" height="72" style="border-radius:12px"><div class="logo">Снабподбор<span>консультации по продажам и развитию бизнеса · Георгий Путилин, самозанятый</span></div></div>
-    <nav><a href="#services">Услуги</a><a href="#how">Как я работаю</a><a href="#about">Обо мне</a><a href="#contacts">Связаться</a></nav>
+    <nav><a href="#services">Услуги</a><a href="#cases">Примеры</a><a href="#how">Как я работаю</a><a href="#about">Обо мне</a><a href="#contacts">Связаться</a></nav>
   </div>
 </header>
 
@@ -76,12 +104,12 @@
 <section id="who">
   <div class="wrap">
     <h2>Кому полезно</h2>
-    <div class="grid4">
-      <div class="card"><b>Производителям и поставщикам</b><p>Продажи держатся на сарафане, а нужен предсказуемый поток новых заказчиков.</p></div>
-      <div class="card"><b>Выход в новую нишу или регион</b><p>Нужно понять рынок и спрос до того, как вкладываться в продвижение.</p></div>
-      <div class="card"><b>Новым продуктам</b><p>Нужно определить, кому продукт нужнее всего и как о нём рассказать.</p></div>
-      <div class="card"><b>Командам продаж</b><p>Много активности и мало сделок: нужно найти узкое место.</p></div>
-    </div>
+    <ul class="who-list">
+      <li><b>Производителям и поставщикам B2B</b><span>Продажи держатся на сарафане, а нужен предсказуемый поток новых заказчиков.</span></li>
+      <li><b>Экспертам и консультантам</b><span>Сильная услуга, но непонятно, кому и как её предлагать за пределами круга знакомых.</span></li>
+      <li><b>Новым продуктам</b><span>Нужно определить, кому продукт нужнее всего и как о нём рассказать.</span></li>
+      <li><b>Командам продаж</b><span>Много активности и мало сделок: нужно найти узкое место.</span></li>
+    </ul>
   </div>
 </section>
 
@@ -104,19 +132,59 @@
 <section id="how">
   <div class="wrap">
     <h2>Как я работаю</h2>
-    <div class="grid">
-      <div class="card"><span class="num">1</span><b>Бриф</b><p>30 минут онлайн: продукт, текущие клиенты, цель.</p></div>
-      <div class="card"><span class="num">2</span><b>Исследование</b><p>Открытые источники: реестры организаций, сведения о закупках, сайты и публичная отчётность компаний, отраслевые публикации.</p></div>
-      <div class="card"><span class="num">3</span><b>Отчёт и разбор</b><p>Отчёт в PDF приходит на почту, на созвоне разбираем, что делать и в каком порядке.</p></div>
+    <div class="steps">
+      <div><b>Бриф</b><p>30 минут онлайн: продукт, текущие клиенты, цель.</p></div>
+      <div><b>Исследование</b><p>Открытые источники: реестры организаций, сведения о закупках, сайты и публичная отчётность компаний, отраслевые публикации.</p></div>
+      <div><b>Отчёт и разбор</b><p>Отчёт в PDF приходит на почту, на созвоне разбираем, что делать и в каком порядке.</p></div>
     </div>
     <p class="note">В отчётах — только сведения об организациях из открытых источников, без персональных данных физических лиц. Решения о продажах вы принимаете и реализуете сами; я не участвую в ваших сделках.</p>
+  </div>
+</section>
+
+<section id="cases" class="dark">
+  <div class="wrap">
+    <h2>Примеры работы</h2>
+    <p class="sub">Два текущих пилота. Клиенты не называются, детали обобщены.</p>
+    <div class="cases">
+      <div class="case">
+        <span class="lbl">Анализ целевых сегментов</span>
+        <h3>Консультант по развитию руководителей</h3>
+        <dl>
+          <dt>Задача</dt><dd>Клиенты приходят только по рекомендациям. Нужно понять, кому ещё нужна услуга и с чего начать выход на новых заказчиков.</dd>
+          <dt>Что сделано</dt><dd><ul>
+            <li>Профиль заказчика по четырём типовым запросам: руководитель застрял в операционке, привычное управление перестало работать, высокая неопределённость, цели не вдохновляют.</li>
+            <li>Оценка объёма сегмента по открытым профессиональным профилям: около 9 тыс. руководителей высшего звена в российских компаниях на 50–1000 сотрудников.</li>
+            <li>Сравнение цены с рынком: стоимость услуги примерно вдвое ниже типичной.</li>
+            <li>Приоритеты для первой волны и сценарий первого обращения.</li>
+          </ul></dd>
+        </dl>
+        <span class="status">Пилот: первая волна, ждём обратной связи</span>
+      </div>
+      <div class="case">
+        <span class="lbl">Разбор рынка · бриф</span>
+        <h3>Разработчик сервиса оценки внедрения ИИ</h3>
+        <dl>
+          <dt>Задача</dt><dd>Продукт показывается на отраслевых конференциях. Нужно системно найти, кому он полезнее всего, и собрать отзывы целевых руководителей.</dd>
+          <dt>Что сделано</dt><dd><ul>
+            <li>Черновой профиль: ИТ-директора, руководители цифровой трансформации, данных и ИИ, директора по инновациям.</li>
+            <li>Сегменты: компании от 200 сотрудников в ритейле, банках, промышленности, логистике и телекоме.</li>
+            <li>Признаки потребности: вакансии в области ИИ и данных, анонсы пилотов, выступления на конференциях.</li>
+            <li>Риск: ИТ-руководители перегружены предложениями интеграторов, поэтому обращаться за экспертным мнением, а не с продажей.</li>
+          </ul></dd>
+        </dl>
+        <span class="status">Пилот: уточняем бриф</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="about">
   <div class="wrap">
     <h2>Обо мне</h2>
-    <p>Георгий Путилин, консультант по операционной эффективности и развитию бизнеса. 15 лет в производственных системах, R&amp;D и управлении проектами на промышленных предприятиях. Разбираю продажи так же, как улучшал производство: цифры, узкие места, план с понятными шагами.</p>
+    <div class="about">
+      <div class="big">15<small>лет в промышленности</small></div>
+      <p>Георгий Путилин, консультант по операционной эффективности и развитию бизнеса. Производственные системы, R&amp;D и управление проектами на промышленных предприятиях. Разбираю продажи так же, как улучшал производство: цифры, узкие места, план с понятными шагами.</p>
+    </div>
   </div>
 </section>
 
