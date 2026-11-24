@@ -6,10 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Консультации по продажам и развитию бизнеса — Георгий Путилин</title>
 <meta name="description" content="Анализ рынка, конкурентов и потребностей клиентов, поиск точек роста продаж и эффективности, план выхода на новых заказчиков. Консультации лично, фиксированная стоимость.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=PT+Serif:wght@700&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#1a1f2b; --muted:#5b6475; --line:#e3e6ec; --accent:#1f5eff; --bg:#f7f8fa; --ok:#1a7f37; }
+  :root { --ink:#1f2421; --muted:#5f6662; --line:#e4e0d8; --accent:#0f6b5c; --bg:#f6f3ee; --ok:#0f6b5c; }
   * { box-sizing:border-box; }
-  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.55; }
+  body { margin:0; font-family:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.55; }
   .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
   a { color:var(--accent); }
   header { border-bottom:1px solid var(--line); padding:16px 0; }
@@ -23,7 +24,7 @@
   .lead { color:var(--muted); font-size:18px; max-width:680px; margin:0; }
   .btn { display:inline-block; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; padding:13px 24px; border-radius:8px; margin-top:24px; border:0; cursor:pointer; font:inherit; font-weight:600; }
   .btn:hover { opacity:.9; }
-  .facts { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+  .facts-old { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
   .facts div { background:#fff; border:1px solid var(--line); border-radius:10px; padding:14px 16px; font-size:14px; color:var(--muted); }
   .facts b { display:block; color:var(--ink); font-size:15px; margin-bottom:4px; }
   section { padding:44px 0; border-bottom:1px solid var(--line); }
@@ -77,26 +78,50 @@
   .about .big small { display:block; font-size:13px; font-weight:400; color:var(--muted); }
   .about p { margin:0; font-size:17px; }
   @media (max-width:760px){ .who-list,.cases{grid-template-columns:1fr;} .steps{flex-direction:column; gap:18px;} .about{grid-template-columns:1fr;} }
+
+  h1, h2 { font-family:"PT Serif",Georgia,serif; }
+  .wordmark { width:48px; height:48px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-family:"PT Serif",Georgia,serif; font-weight:700; font-size:20px; }
+  .hero { background:var(--bg); padding:64px 0 56px; }
+  .hero-grid { display:grid; grid-template-columns:1.4fr 1fr; gap:40px; align-items:center; }
+  .hero-card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px; box-shadow:0 10px 30px rgba(15,107,92,.08); }
+  .hero-card .k { font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); font-weight:700; }
+  .hero-card .p { font-size:34px; font-weight:800; margin:6px 0 4px; }
+  .hero-card p { margin:0 0 6px; color:var(--muted); font-size:14px; }
+  .hero-card .btn { margin-top:14px; width:100%; text-align:center; }
+  .pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+  .pills span { background:#fff; border:1px solid var(--line); border-radius:30px; padding:6px 14px; font-size:14px; }
+  .btn { border-radius:30px; }
+  .dark { background:#16302b; }
+  .case { background:#1f3d37; }
+  .case .lbl, .case dt { color:#9fdcc9; }
+  .status { background:#2b4c45; color:#d2efe6; }
+  .steps div::before { color:#cfe5df; }
+  .who-list li::before { color:var(--accent); }
+  @media (max-width:760px){ .hero-grid{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="brand"><img src="logo.png" alt="Снабподбор" width="72" height="72" style="border-radius:12px"><div class="logo">Снабподбор<span>консультации по продажам и развитию бизнеса · Георгий Путилин, самозанятый</span></div></div>
+    <div class="brand"><div class="wordmark">ГП</div><div class="logo">Снабподбор<span>консультации по продажам и развитию бизнеса · Георгий Путилин, самозанятый</span></div></div>
     <nav><a href="#services">Услуги</a><a href="#cases">Примеры</a><a href="#how">Как я работаю</a><a href="#about">Обо мне</a><a href="#contacts">Связаться</a></nav>
   </div>
 </header>
 
 <div class="hero">
-  <div class="wrap">
-    <h1>Помогаю найти точки роста продаж и выйти на новых заказчиков</h1>
-    <p class="lead">Анализирую рынок, конкурентов и потребности ваших клиентов. Нахожу, где бизнес теряет продажи и эффективность, и составляю понятный план действий. Работаю лично, результат — письменный отчёт и разбор на созвоне.</p>
-    <a class="btn" href="#services">Посмотреть услуги</a>
-    <div class="facts">
-      <div><b>Анализ рынка и конкурентов</b>кто ещё продаёт то же, по каким ценам и каналам, чем вы можете выделиться</div>
-      <div><b>Потребности клиентов</b>какие организации и сегменты вероятнее всего нуждаются в вашем продукте и почему</div>
-      <div><b>План продаж</b>с чего начать, в каком порядке действовать и как оценить результат</div>
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Найду точки роста продаж и составлю план выхода на новых заказчиков</h1>
+      <p class="lead">Анализирую рынок, конкурентов и потребности ваших клиентов. Работаю лично, результат — письменный отчёт и разбор на созвоне.</p>
+      <div class="pills"><span>Анализ рынка и конкурентов</span><span>Целевые сегменты</span><span>План продаж</span></div>
+    </div>
+    <div class="hero-card">
+      <div class="k">Первый шаг</div>
+      <div class="p">2 000 ₽</div>
+      <p>Экспресс-разбор: 45 минут по вашему вопросу и письменное резюме с рекомендациями.</p>
+      <a class="btn" href="mailto:zapros@snabpodbor.ru?subject=Оплата: Экспресс-разбор">Записаться на разбор</a>
+      <p style="margin-top:10px"><a href="#services">Все услуги и стоимость →</a></p>
     </div>
   </div>
 </div>
